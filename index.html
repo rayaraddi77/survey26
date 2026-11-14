@@ -1,34 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Project Survey</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
-        label { display: block; margin-top: 15px; font-weight: bold; }
-        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-        button { margin-top: 20px; padding: 10px 20px; background: #2ea44f; color: white; border: none; cursor: pointer; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Public Opinion Survey</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 650px;
+    background: white;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #183153;
+}
+
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.question {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.radio-option {
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2166d1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #174b9c;
+}
+
+#message {
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+}
+
+</style>
 </head>
+
 <body>
-    <h1>User Feedback Survey</h1>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
 
-        <label for="rating">How would you rate this project?</label>
-        <select id="rating" name="rating">
-            <option value="5">5 - Excellent</option>
-            <option value="4">4 - Good</option>
-            <option value="3">3 - Average</option>
-            <option value="2">2 - Poor</option>
-            <option value="1">1 - Terrible</option>
-        </select>
+<div class="container">
 
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="comments" rows="4"></textarea>
+<h1>Public Opinion Survey</h1>
 
-        <button type="submit">Submit Survey</button>
-    </form>
+<p class="description">
+Your opinions matter. Please complete this anonymous survey.
+</p>
+
+<form id="surveyForm">
+
+<div class="question">
+<label>1. What is your age group?</label>
+<select name="age" required>
+<option value="">Select</option>
+<option>Under 18</option>
+<option>18–25</option>
+<option>26–35</option>
+<option>36–45</option>
+<option>46–60</option>
+<option>Over 60</option>
+</select>
+</div>
+
+<div class="question">
+<label>2. Which region do you live in?</label>
+<select name="region" required>
+<option value="">Select</option>
+<option>London</option>
+<option>South East</option>
+<option>South West</option>
+<option>Midlands</option>
+<option>North England</option>
+<option>Scotland</option>
+<option>Wales</option>
+<option>Northern Ireland</option>
+<option>Outside UK</option>
+</select>
+</div>
+
+<div class="question">
+<label>3. What is the biggest issue facing society?</label>
+<select name="issue" required>
+<option value="">Select</option>
+<option>Cost of living</option>
+<option>Healthcare</option>
+<option>Education</option>
+<option>Housing</option>
+<option>Climate change</option>
+<option>Employment</option>
+<option>Crime and safety</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="question">
+<label>4. How satisfied are you with public services?</label>
+<select name="services" required>
+<option value="">Select</option>
+<option>1 - Very dissatisfied</option>
+<option>2 - Dissatisfied</option>
+<option>3 - Neutral</option>
+<option>4 - Satisfied</option>
+<option>5 - Very satisfied</option>
+</select>
+</div>
+
+<div class="question">
+<label>5. Do you think the cost of living is improving?</label>
+
+<label class="radio-option">
+<input type="radio" name="cost" value="Yes" required> Yes
+</label>
+
+<label class="radio-option">
+<input type="radio" name="cost" value="No"> No
+</label>
+
+<label class="radio-option">
+<input type="radio" name="cost" value="Unsure"> Unsure
+</label>
+</div>
+
+<div class="question">
+<label>6. How important is environmental protection?</label>
+<select name="environment" required>
+<option value="">Select</option>
+<option>1 - Not important</option>
+<option>2 - Slightly important</option>
+<option>3 - Moderately important</option>
+<option>4 - Important</option>
+<option>5 - Extremely important</option>
+</select>
+</div>
+
+<div class="question">
+<label>7. Is technology improving people's lives?</label>
+
+<label class="radio-option">
+<input type="radio" name="technology" value="Yes" required> Yes
+</label>
+
+<label class="radio-option">
+<input type="radio" name="technology" value="No"> No
+</label>
+
+<label class="radio-option">
+<input type="radio" name="technology" value="Unsure"> Unsure
+</label>
+</div>
+
+<div class="question">
+<label>8. What is your biggest concern about the future?</label>
+<select name="future" required>
+<option value="">Select</option>
+<option>Economy</option>
+<option>Climate</option>
+<option>Technology and AI</option>
+<option>Employment</option>
+<option>Healthcare</option>
+<option>Education</option>
+<option>Global security</option>
+</select>
+</div>
+
+<div class="question">
+<label>9. Do you feel your opinions are represented in society?</label>
+
+<label class="radio-option">
+<input type="radio" name="representation" value="Yes" required> Yes
+</label>
+
+<label class="radio-option">
+<input type="radio" name="representation" value="No"> No
+</label>
+
+<label class="radio-option">
+<input type="radio" name="representation" value="Unsure"> Unsure
+</label>
+</div>
+
+<div class="question">
+<label>10. Any additional comments?</label>
+<textarea name="comments" rows="4"
+placeholder="Share your thoughts..."></textarea>
+</div>
+
+<button type="submit">Submit Survey</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+const scriptURL = "YOUR_GOOGLE_SCRIPT_URL";
+
+document.getElementById("surveyForm")
+.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const form = this;
+    const data = Object.fromEntries(new FormData(form));
+
+    const button = form.querySelector("button");
+    const message = document.getElementById("message");
+
+    button.disabled = true;
+    button.innerText = "Submitting...";
+
+    try {
+
+        const body = new URLSearchParams();
+        body.append("data", JSON.stringify(data));
+
+        await fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: body
+        });
+
+        message.innerText =
+        "Thank you! Your response has been submitted.";
+
+        form.reset();
+
+    } catch (error) {
+
+        message.innerText =
+        "Submission failed. Please try again.";
+
+    }
+
+    button.disabled = false;
+    button.innerText = "Submit Survey";
+
+});
+
+</script>
+
 </body>
 </html>
